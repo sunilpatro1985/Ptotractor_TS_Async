@@ -15,13 +15,13 @@ export class AddCustomerPage{
      lastname = this.custData.customers.lastname;
      pcode = this.custData.customers.postalcode;
 
-     AddCustomer(){
+     async AddCustomer(){
          this.fname.sendKeys(this.firstname);
          this.lname.sendKeys(this.lastname);
          this.postalcode.sendKeys(this.pcode);
 
          this.addcustomerbtn.click();
          browser.sleep(1000);
-         Util.VerifyAndCloseAlert("Customer added");
+         await Util.VerifyAndCloseAlert("Customer added");
      }
 }

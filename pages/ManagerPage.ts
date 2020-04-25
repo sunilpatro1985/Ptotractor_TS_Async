@@ -7,14 +7,15 @@ export class ManagerPage{
     openAccount = element(by.buttonText('Open Account'));
     public static ExpectedCondition: ProtractorExpectedConditions = protractor.ExpectedConditions;
 
-    navigateToAddCustomer(){
-        browser.wait(ManagerPage.ExpectedCondition.presenceOf(this.addCustomer), 5000).then(() => {
+    async navigateToAddCustomer(){
+        /*browser.wait(ManagerPage.ExpectedCondition.presenceOf(this.addCustomer), 5000).then(() => {
             this.addCustomer.click()
-        })
+        })*/
+        await this.addCustomer.click();
     }
 
-    navigateToOpenAccount(){
-        this.openAccount.click();
+    async navigateToOpenAccount(){
+        await this.openAccount.click();
     }
 }
 		

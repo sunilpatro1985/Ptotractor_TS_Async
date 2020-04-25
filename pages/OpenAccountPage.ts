@@ -14,7 +14,7 @@ export class OpenAccountPage{
 
     name = this.custData.customers.firstname + " " + this.custData.customers.lastname;
 
-    SelectACustomer(){
+    /*SelectACustomer(){
         let name = this.name;
         log.debug(name);
         this.options.then(function(items){
@@ -30,16 +30,28 @@ export class OpenAccountPage{
                  })
             }
         })
+    }*/
+
+    async SelectACustomer(){
+        let name = this.name;
+        log.debug(name);
+        log.debug("Dropdown option size " + (await this.options).length);
+        log.debug("Customers count " + (await this.options).length);
+        for (let i = 0; i < (await this.options).length; i++) {
+            log.debug(await this.options.get(i).getText());
+            if (await this.options.get(i).getText() == name) {
+                await this.options.get(i).click();
+            }
+        }
     }
 
-    SelectDollar(){
-        this.Currency.$('[value="Dollar"]').click();
+    async SelectDollar(){
+        await this.Currency.$('[value="Dollar"]').click();
     }
 
-    ProcessIt(){
-        this.Process.click();
-        Util.VerifyAndCloseAlert("Account created");
+    async ProcessIt(){
+        await this.Process.click();
+        await Util.VerifyAndCloseAlert("Account created");
     } 
 
 }
-

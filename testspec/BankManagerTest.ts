@@ -6,7 +6,7 @@ import { HomePage } from "../pages/HomePage";
 
 const log = require("../config/log4js").default;
 
-describe("Banking project test", function(){
+describe("Banking project test", async function(){
     const custData = require("../testdata/Cust");
     
     let homePage = new HomePage();
@@ -14,33 +14,38 @@ describe("Banking project test", function(){
     let managerPage = new ManagerPage();
     let openAccountPage = new OpenAccountPage();
     
-    beforeEach(function(){
-        browser.get(custData.siteurl);
-        browser.getCurrentUrl().then(function(txt){
+    beforeEach(async function(){
+        await browser.get(custData.siteurl);
+        /*browser.getCurrentUrl().then(function(txt){
             log.debug(txt);
-        })
+        })*/
+        log.debug(await browser.getCurrentUrl());
     })
 
-    it("verify add customer & open account", function(){
+    it("verify add customer & open account", async function(){
 
-        homePage.mainHeading.getText().then(function(txt){
+        /*homePage.mainHeading.getText().then(function(txt){
             log.debug(txt);
             expect<any>(txt).toBe("XYZ Bank");
-        })
+        })*/
+        expect<any>(await homePage.mainHeading.getText()).toBe("XYZ Bank");
+        log.debug(await homePage.mainHeading.getText());
         browser.sleep(2000);
 
-        homePage.navigateToBankManagerLogin();
-        managerPage.navigateToAddCustomer();
+        await homePage.navigateToBankManagerLogin();
         browser.sleep(1000);
-        new AddCustomerPage().AddCustomer();
+        await managerPage.navigateToAddCustomer();
+        browser.sleep(1000);
+        await new AddCustomerPage().AddCustomer();
         browser.sleep(1000);
 
-        managerPage.navigateToOpenAccount();
-        openAccountPage.SelectACustomer();
+        await managerPage.navigateToOpenAccount();
+        browser.sleep(2000);
+        await openAccountPage.SelectACustomer();
         browser.sleep(3000);
-        openAccountPage.SelectDollar();
+        await openAccountPage.SelectDollar();
         browser.sleep(3000);
-        openAccountPage.ProcessIt();
+        await openAccountPage.ProcessIt();
         browser.sleep(3000);
     })
 

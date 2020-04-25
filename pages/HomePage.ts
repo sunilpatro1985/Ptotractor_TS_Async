@@ -5,7 +5,7 @@ export class HomePage{
     bankManagerLogin = element(by.buttonText('Bank Manager Login'));
     mainHeading = element(by.className('mainHeading'));
 
-    navigateToBankManagerLogin(){
-        this.bankManagerLogin.click();
+    async navigateToBankManagerLogin(){
+        await this.bankManagerLogin.click();
     }
 }
