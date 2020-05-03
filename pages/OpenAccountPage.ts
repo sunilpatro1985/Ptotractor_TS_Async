@@ -1,16 +1,20 @@
 import { browser, element, by, protractor } from "protractor";
 import { Util } from "../Utility/Util";
+import { pageEl } from "../Utility/pageEl";
 
 const log = require("../config/log4js").default;
 
 export class OpenAccountPage{
     custData = require("../testdata/Cust");
 
-    Customers = element(by.id('userSelect'));
+    /*Customers = element(by.id('userSelect'));
     options = this.Customers.all(by.tagName('option'));
 
     Currency = element(by.id('currency')); //$ = by.css
-    Process = element(by.buttonText("Process"));
+    Process = element(by.buttonText("Process"));*/
+    Customers = new pageEl(by.id('userSelect'))
+    Process = new pageEl(by.buttonText("Process"));
+    Currency = new pageEl(by.id('currency'));
 
     name = this.custData.customers.firstname + " " + this.custData.customers.lastname;
 
@@ -32,7 +36,7 @@ export class OpenAccountPage{
         })
     }*/
 
-    async SelectACustomer(){
+    /*async SelectACustomer(){
         let name = this.name;
         log.debug(name);
         log.debug("Dropdown option size " + (await this.options).length);
@@ -43,10 +47,17 @@ export class OpenAccountPage{
                 await this.options.get(i).click();
             }
         }
+    }*/
+
+    async SelectACustomer(){
+        let name = this.name;
+        log.debug(name);
+        await this.Customers.selectByOptionText(name);
     }
 
     async SelectDollar(){
-        await this.Currency.$('[value="Dollar"]').click();
+        //await this.Currency.$('[value="Dollar"]').click();
+        await this.Currency.selectByOptionText("Dollar");
     }
 
     async ProcessIt(){

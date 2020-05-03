@@ -22,30 +22,46 @@ describe("Banking project test", async function(){
         log.debug(await browser.getCurrentUrl());
     })
 
+    xit("verify add customer & open account", async function(){
+
+        /*homePage.mainHeading.getText().then(function(txt){
+            log.debug(txt);
+            expect<any>(txt).toBe("XYZ Bank");
+        })*/
+        //expect<any>(await homePage.mainHeading.getText()).toBe("XYZ Bank");
+        //log.debug(await homePage.mainHeading.getText());
+        browser.sleep(2000);
+
+        await homePage.navigateToBankManagerLogin();
+        //browser.sleep(1000);
+        await managerPage.navigateToAddCustomer();
+        //browser.sleep(1000);
+        await new AddCustomerPage().AddCustomer();
+        //browser.sleep(1000);
+
+        await managerPage.navigateToOpenAccount();
+        //browser.sleep(2000);
+        await openAccountPage.SelectACustomer();
+        //browser.sleep(3000);
+        await openAccountPage.SelectDollar();
+        //browser.sleep(3000);
+        await openAccountPage.ProcessIt();
+        browser.sleep(3000);
+    })
     it("verify add customer & open account", async function(){
 
         /*homePage.mainHeading.getText().then(function(txt){
             log.debug(txt);
             expect<any>(txt).toBe("XYZ Bank");
         })*/
-        expect<any>(await homePage.mainHeading.getText()).toBe("XYZ Bank");
-        log.debug(await homePage.mainHeading.getText());
+        expect<any>(await homePage.mainHeading.getText("SiteMainHeader")).toBe("XYZ Bank");
+        log.debug(await homePage.mainHeading.getText("SiteMainHeader"));
         browser.sleep(2000);
 
         await homePage.navigateToBankManagerLogin();
-        browser.sleep(1000);
+        //browser.sleep(1000);
         await managerPage.navigateToAddCustomer();
-        browser.sleep(1000);
-        await new AddCustomerPage().AddCustomer();
-        browser.sleep(1000);
-
-        await managerPage.navigateToOpenAccount();
-        browser.sleep(2000);
-        await openAccountPage.SelectACustomer();
-        browser.sleep(3000);
-        await openAccountPage.SelectDollar();
-        browser.sleep(3000);
-        await openAccountPage.ProcessIt();
+        await addCustPage.enter2ndInput();
         browser.sleep(3000);
     })
 
