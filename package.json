@@ -6,7 +6,8 @@
   "scripts": {
     "tsc": "tsc",
     "pretest": "npm run tsc",
-    "test": "node_modules/.bin/protractor outputjs/conf.js"
+    "test": "node_modules/.bin/protractor outputjs/conf.js",
+    "_comment" : "protractor outputjs/conf.js --params.appUrl=$appUrl, appUrl='abc.com' npm run test "
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +20,8 @@
     "jasmine": "3.5.0",
     "protractor": "~5.4.3",
     "typescript": "~3.8.3",
-    "log4js": "6.1.2"
+    "log4js": "6.1.2",
+    "jasmine-ts": "0.3.0",
+    "jasmine-spec-reporter": "5.0.2"
   }
 }
