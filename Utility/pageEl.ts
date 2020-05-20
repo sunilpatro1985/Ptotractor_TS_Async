@@ -74,6 +74,10 @@ export class pageEl{
         return this;
     }
 
+    async getId(){
+        return (await this.getElement()).getId();
+    }
+
     //elem.get(9).getText();
     //this.radiobtns.get(6).click()
 

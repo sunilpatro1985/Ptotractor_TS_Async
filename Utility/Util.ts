@@ -19,4 +19,16 @@ static async VerifyAndCloseAlert(text: string){
     await alert.accept(); 
 }
 
+static async verify_TabOrder(ArrayElements: any){
+    var els = ArrayElements;
+        for(var i=0; i < (els.length-1); i++){
+            console.log("Before Tab - " + await els[i].getId());
+            //await els[i].sendKeys(protractor.Key.TAB);
+            await browser.actions().sendKeys(protractor.Key.TAB).perform();
+            browser.sleep(1000);
+            console.log(await (await browser.switchTo().activeElement()).getId());
+            expect(await els[i+1].getId()).toBe(await (await browser.switchTo().activeElement()).getId());
+        }
+}
+
 }
