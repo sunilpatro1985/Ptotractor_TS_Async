@@ -8,33 +8,20 @@
     "uri": "Features/Sample.feature",
     "elements": [
       {
-        "id": "welcome-to-profile-database;multiple-profile-entry-from-examples",
+        "id": "welcome-to-profile-database;validate-profiles-with-datatable",
         "keyword": "Scenario",
-        "line": 11,
-        "name": "Multiple profile entry from examples",
+        "line": 14,
+        "name": "Validate Profiles with DataTable",
         "tags": [],
         "type": "scenario",
         "steps": [
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 4,
-            "name": "Profile entry screen",
+            "line": 15,
+            "name": "Profiles report screen",
             "match": {
-              "location": "stepDef/Sample.ts:3"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 5,
-            "name": "Enter Name PQR",
-            "match": {
-              "location": "stepDef/Sample.ts:7"
+              "location": "stepDef/Sample.ts:24"
             },
             "result": {
               "status": "passed",
@@ -43,11 +30,11 @@
           },
           {
             "arguments": [],
-            "keyword": "And ",
-            "line": 6,
-            "name": "Enter Tool Protractor",
+            "keyword": "When ",
+            "line": 16,
+            "name": "Fetch the profiles",
             "match": {
-              "location": "stepDef/Sample.ts:11"
+              "location": "stepDef/Sample.ts:28"
             },
             "result": {
               "status": "passed",
@@ -55,115 +42,39 @@
             }
           },
           {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 7,
-            "name": "Enter Exp 5",
-            "match": {
-              "location": "stepDef/Sample.ts:15"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Key",
+                      "Value"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "UserName",
+                      "\"qavbox\""
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Password",
+                      "\"qavbox123\""
+                    ]
+                  }
+                ]
+              }
+            ],
             "keyword": "Then ",
-            "line": 8,
-            "name": "validate profiles saved with out error",
+            "line": 17,
+            "name": "Validate profiles",
             "match": {
-              "location": "stepDef/Sample.ts:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "match": {
-              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:27"
+              "location": "stepDef/Sample.ts:32"
             },
             "result": {
               "status": "passed",
               "duration": 1000000
-            }
-          }
-        ]
-      },
-      {
-        "id": "welcome-to-profile-database;multiple-profile-entry-from-examples",
-        "keyword": "Scenario",
-        "line": 12,
-        "name": "Multiple profile entry from examples",
-        "tags": [],
-        "type": "scenario",
-        "steps": [
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 4,
-            "name": "Profile entry screen",
-            "match": {
-              "location": "stepDef/Sample.ts:3"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 5,
-            "name": "Enter Name GHI",
-            "match": {
-              "location": "stepDef/Sample.ts:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 6,
-            "name": "Enter Tool Appium",
-            "match": {
-              "location": "stepDef/Sample.ts:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 7,
-            "name": "Enter Exp 6",
-            "match": {
-              "location": "stepDef/Sample.ts:15"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 8,
-            "name": "validate profiles saved with out error",
-            "match": {
-              "location": "stepDef/Sample.ts:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 0
             }
           },
           {
