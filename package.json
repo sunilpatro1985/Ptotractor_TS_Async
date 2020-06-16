@@ -7,7 +7,7 @@
     "tsc": "tsc",
     "pretest": "npm run tsc",
     "test": "node_modules/.bin/protractor outputjs/conf.js",
-    "_comment" : "protractor outputjs/conf.js --params.appUrl=$appUrl, appUrl='abc.com' npm run test "
+    "_comment": "protractor outputjs/conf.js --params.appUrl=$appUrl, appUrl='abc.com' npm run test "
   },
   "author": "",
   "license": "ISC",
@@ -22,6 +22,13 @@
     "typescript": "~3.8.3",
     "log4js": "6.1.2",
     "jasmine-ts": "0.3.0",
-    "jasmine-spec-reporter": "5.0.2"
+    "jasmine-spec-reporter": "5.0.2",
+    "cucumber": "6.0.5",
+    "@types/cucumber": "6.0.1",
+    "protractor-cucumber-framework": "6.2.1",
+    "cucumber-html-reporter": "5.1.0",
+    "chai": "4.2.0",
+    "chai-as-promised": "7.1.1",
+    "mkdirp": "1.0.3"
   }
 }

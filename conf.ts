@@ -1,10 +1,18 @@
 import {Config, browser} from 'protractor';
-let SpecReporter = require('jasmine-spec-reporter').SpecReporter;
+//let SpecReporter = require('jasmine-spec-reporter').SpecReporter;
 import SuiteInfo = jasmine.SuiteInfo;
 //var screenreporter = require('util/screenreporter.js');
 
+import {Reporter} from './config/Reporter';
+
+let path = require('path');
+var outputDir = path.join(process.cwd(), '/reports/json');
+
 export let config: Config = {
-    framework : "jasmine2",
+    //framework : "jasmine2",
+    framework: 'custom',
+    frameworkPath: require.resolve('protractor-cucumber-framework'),
+    SELENIUM_PROMISE_MANAGER:false,
 
     jasmineNodeOpts:{
         showColors : true,
@@ -34,11 +42,24 @@ export let config: Config = {
     },
  
     //specs:['./testspec/BankManagerTest.js'],
-    specs:['./testspec/TabOrder.js'],
+    //specs:['./testspec/TabOrder.js'],
+    specs:['../Features/Sample.feature'],
+
     //SELENIUM_PROMISE_MANAGER: false,
 
     //seleniumAddress: 'http://localhost:4444/wd/hub',
     directConnect:true,
+
+    cucumberOpts: {
+      require: [
+        '../outputjs/stepDef/*.js' ,
+        '../outputjs/config/*.js'
+    ],
+    format:"json:./reports/json/cucumber_report.json",
+    tags: false,
+    profile: false,
+    'no-source': true
+    },
 
     onPrepare: async ()=>{
         var os = require('os');
@@ -55,14 +76,16 @@ export let config: Config = {
         //let myReporter = require('./config/hooks');
         //jasmine.getEnv().addReporter(myReporter);
         
-        jasmine.getEnv().addReporter(new SpecReporter({
+        /*jasmine.getEnv().addReporter(new SpecReporter({
             spec: {
               displayStacktrace: 'pretty'
             },
             summary: {
               displayDuration: false
             }
-          }));
+          }));*/
+
+          Reporter.createDirectory(outputDir);
 
        },
 
@@ -86,6 +109,8 @@ export let config: Config = {
 
        // You could set no globals to true to avoid jQuery '$' and protractor '$'
        // collisions on the global namespace.
-       noGlobals: true
+       noGlobals: true,
+
+       onComplete: () => {Reporter.createHTMLReport();}
     }
 

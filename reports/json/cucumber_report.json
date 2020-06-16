@@ -1,0 +1,184 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "welcome to profile database",
+    "line": 1,
+    "id": "welcome-to-profile-database",
+    "tags": [],
+    "uri": "Features/Sample.feature",
+    "elements": [
+      {
+        "id": "welcome-to-profile-database;multiple-profile-entry-from-examples",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "Multiple profile entry from examples",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "Profile entry screen",
+            "match": {
+              "location": "stepDef/Sample.ts:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "Enter Name PQR",
+            "match": {
+              "location": "stepDef/Sample.ts:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "Enter Tool Protractor",
+            "match": {
+              "location": "stepDef/Sample.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "Enter Exp 5",
+            "match": {
+              "location": "stepDef/Sample.ts:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "validate profiles saved with out error",
+            "match": {
+              "location": "stepDef/Sample.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "welcome-to-profile-database;multiple-profile-entry-from-examples",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "Multiple profile entry from examples",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "Profile entry screen",
+            "match": {
+              "location": "stepDef/Sample.ts:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "Enter Name GHI",
+            "match": {
+              "location": "stepDef/Sample.ts:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "Enter Tool Appium",
+            "match": {
+              "location": "stepDef/Sample.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "Enter Exp 6",
+            "match": {
+              "location": "stepDef/Sample.ts:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "validate profiles saved with out error",
+            "match": {
+              "location": "stepDef/Sample.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
