@@ -1,76 +1,64 @@
 [
   {
     "keyword": "Feature",
-    "name": "welcome to profile database",
+    "name": "User should be able to add a customer & open an account",
     "line": 1,
-    "id": "welcome-to-profile-database",
+    "id": "user-should-be-able-to-add-a-customer-&-open-an-account",
     "tags": [],
-    "uri": "Features/Sample.feature",
+    "uri": "Features/Customers.feature",
     "elements": [
       {
-        "id": "welcome-to-profile-database;validate-profiles-with-datatable",
+        "id": "user-should-be-able-to-add-a-customer-&-open-an-account;add-customers",
         "keyword": "Scenario",
-        "line": 14,
-        "name": "Validate Profiles with DataTable",
+        "line": 9,
+        "name": "Add Customers",
         "tags": [],
         "type": "scenario",
         "steps": [
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 15,
-            "name": "Profiles report screen",
+            "line": 4,
+            "name": "I am on XYZ Bank home page",
             "match": {
-              "location": "stepDef/Sample.ts:24"
+              "location": "stepDef/Customers.ts:25"
             },
             "result": {
               "status": "passed",
-              "duration": 1000000
+              "duration": 112000000
             }
           },
           {
             "arguments": [],
-            "keyword": "When ",
-            "line": 16,
-            "name": "Fetch the profiles",
+            "keyword": "Then ",
+            "line": 5,
+            "name": "I go to Add Customer screen",
             "match": {
-              "location": "stepDef/Sample.ts:28"
+              "location": "stepDef/Customers.ts:32"
             },
             "result": {
               "status": "passed",
-              "duration": 0
+              "duration": 209000000
             }
           },
           {
-            "arguments": [
-              {
-                "rows": [
-                  {
-                    "cells": [
-                      "Key",
-                      "Value"
-                    ]
-                  },
-                  {
-                    "cells": [
-                      "UserName",
-                      "\"qavbox\""
-                    ]
-                  },
-                  {
-                    "cells": [
-                      "Password",
-                      "\"qavbox123\""
-                    ]
-                  }
-                ]
-              }
-            ],
+            "arguments": [],
             "keyword": "Then ",
-            "line": 17,
-            "name": "Validate profiles",
+            "line": 6,
+            "name": "I enter John, Cena, 12345 to create a customer",
             "match": {
-              "location": "stepDef/Sample.ts:32"
+              "location": "stepDef/Customers.ts:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 513000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "config/hooks.ts:19"
             },
             "result": {
               "status": "passed",
@@ -85,7 +73,177 @@
             },
             "result": {
               "status": "passed",
+              "duration": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-should-be-able-to-add-a-customer-&-open-an-account;add-customers",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "Add Customers",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I am on XYZ Bank home page",
+            "match": {
+              "location": "stepDef/Customers.ts:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 358000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "I go to Add Customer screen",
+            "match": {
+              "location": "stepDef/Customers.ts:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 114000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "I enter Trish, Stratus, 34567 to create a customer",
+            "match": {
+              "location": "stepDef/Customers.ts:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 340000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "config/hooks.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:27"
+            },
+            "result": {
+              "status": "passed",
               "duration": 1000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-should-be-able-to-add-a-customer-&-open-an-account;open-account",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "Open Account",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "I am on Open Account Page",
+            "match": {
+              "location": "stepDef/Customers.ts:45"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2276000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "customerName"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "John Cena"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "When ",
+            "line": 14,
+            "name": "I select customerName as customer",
+            "match": {
+              "location": "stepDef/Customers.ts:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 50000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "I select currency as \"Rupee\"",
+            "match": {
+              "location": "stepDef/Customers.ts:62"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 53000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 18,
+            "name": "I should click on Process to create an account",
+            "match": {
+              "location": "stepDef/Customers.ts:67"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 82000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "config/hooks.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
             }
           }
         ]

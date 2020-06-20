@@ -1,5 +1,6 @@
 import {protractor, browser} from 'protractor';
 const log = require("../config/log4js").default;
+const expect = require('chai').expect;
 
 export class Util{
 
@@ -15,8 +16,9 @@ static async VerifyAndCloseAlert(text: string){
     })*/
     log.debug(alertText);
     browser.sleep(2000);
-    expect<any>(alertText).toContain(text);
+    expect(alertText).to.include(text);
     await alert.accept(); 
+    browser.sleep(2000);
 }
 
 static async verify_TabOrder(ArrayElements: any){

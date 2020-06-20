@@ -33,6 +33,16 @@ export class AddCustomerPage{
          await Util.VerifyAndCloseAlert("Customer added");
      }
 
+     async addCustomer(fName: string, lName: string, pCode: number){
+        await this.fname.sendKeys(fName);
+        await this.lname.sendKeys(lName);
+        await this.postalcode.sendKeys(pCode.toString());
+
+        await this.addcustomerbtn.click();
+        browser.sleep(1000);
+        await Util.VerifyAndCloseAlert("Customer added");
+    }
+
      async enter2ndInput(){
          log.debug(await this.inputs.size());
          await (await this.inputs.get(1)).sendKeys("Example");

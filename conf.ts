@@ -43,7 +43,7 @@ export let config: Config = {
  
     //specs:['./testspec/BankManagerTest.js'],
     //specs:['./testspec/TabOrder.js'],
-    specs:['../Features/Sample.feature'],
+    specs:['../Features/Customers.feature'],
 
     //SELENIUM_PROMISE_MANAGER: false,
 

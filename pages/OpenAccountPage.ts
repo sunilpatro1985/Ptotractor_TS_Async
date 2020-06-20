@@ -55,6 +55,15 @@ export class OpenAccountPage{
         await this.Customers.selectByOptionText(name);
     }
 
+    async selectACustomer(name: string){
+        log.debug(name);
+        await this.Customers.selectByOptionText(name);
+    }
+
+    async selectACurrency(txt: string) {
+        await this.Currency.selectByOptionText(txt);
+    }
+
     async SelectDollar(){
         //await this.Currency.$('[value="Dollar"]').click();
         await this.Currency.selectByOptionText("Dollar");
