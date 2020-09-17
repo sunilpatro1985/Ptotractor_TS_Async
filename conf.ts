@@ -33,8 +33,8 @@ export let config: Config = {
         //protractor conf.js bothtest
     },
  
-    //specs:['./testspec/BankManagerTest.js'],
-    specs:['./testspec/TabOrder.js'],
+    specs:['./testspec/BankManagerTest.js'],
+    //specs:['./testspec/TabOrder.js'],
     //SELENIUM_PROMISE_MANAGER: false,
 
     //seleniumAddress: 'http://localhost:4444/wd/hub',
