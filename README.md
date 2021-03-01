@@ -23,7 +23,11 @@ and then ```Enter```
 
 and then Enter ```webdriver-manager start``` //This will activate selenium server with port 4444
 
-Then create another instance of terminal by clicking the + sign and then Enter
+Then create another instance of terminal by clicking the + sign and then Enter  
 ```npm test``` //this will invoke chrome browser and validate the browser functionalities.
 
 
+### Note on Protractor cucumber
+
+If you are looking for protractor cucumber framework, then switch to ```cucumber``` branch,  
+else continue with branch ```master```
