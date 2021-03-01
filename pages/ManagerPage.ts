@@ -13,6 +13,7 @@ export class ManagerPage{
             this.addCustomer.click()
         })*/
         await this.addCustomer.click();
+        browser.sleep(3000);
     }
 
     async navigateToOpenAccount(){

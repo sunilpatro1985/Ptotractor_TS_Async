@@ -48,6 +48,7 @@ describe("Banking project test", async function(){
         await openAccountPage.ProcessIt();
         browser.sleep(3000);
     })
+
     it("verify add customer & open account", async function(){
 
         /*homePage.mainHeading.getText().then(function(txt){
@@ -61,7 +62,8 @@ describe("Banking project test", async function(){
         await homePage.navigateToBankManagerLogin();
         //browser.sleep(1000);
         await managerPage.navigateToAddCustomer();
-        await addCustPage.enter2ndInput();
+        await addCustPage.AddCustomer()
+        //await addCustPage.enter2ndInput();
         browser.sleep(3000);
     })
 

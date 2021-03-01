@@ -24,11 +24,11 @@ export class AddCustomerPage{
      pcode = this.custData.customers.postalcode;
 
      async AddCustomer(){
-         this.fname.sendKeys(this.firstname);
-         this.lname.sendKeys(this.lastname);
-         this.postalcode.sendKeys(this.pcode);
-
-         this.addcustomerbtn.click();
+         await this.fname.sendKeys(this.firstname);
+         await this.lname.sendKeys(this.lastname);
+         await this.postalcode.sendKeys(this.pcode);
+         browser.sleep(1000);
+         await this.addcustomerbtn.click();
          browser.sleep(1000);
          await Util.VerifyAndCloseAlert("Customer added");
      }

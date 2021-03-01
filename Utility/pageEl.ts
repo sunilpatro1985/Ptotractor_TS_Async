@@ -1,11 +1,11 @@
-import { ElementFinder, protractor, browser, element, by } from "protractor";
+import { ElementFinder, protractor, browser, element, by, WebElementPromise } from "protractor";
 
 const log = require("../config/log4js").default;
 
 export class pageEl{
 
     byEL: any;
-    el!: ElementFinder;
+    el!: WebElementPromise;
     index: number = 0;
 
     constructor(byEl: any){
@@ -50,12 +50,12 @@ export class pageEl{
         await browser.wait(this.EC.presenceOf(element(this.byEL)), 30000, 'Element didnot found');
     }
 
-    async getElement(): Promise<ElementFinder>{
+    async getElement(): Promise<WebElementPromise>{
         await this.waitForEl();
         if(this.index == 0){
-            this.el = element(this.byEL);
+            this.el = element(this.byEL).getWebElement();
         }else{
-            this.el = element.all(this.byEL).get(this.index);
+            this.el = element.all(this.byEL).get(this.index).getWebElement();
         }
         return this.el;
     }
@@ -83,7 +83,7 @@ export class pageEl{
 
     async selectByOptionText(text: string){
         try{
-            await (await this.getElement()).element(by.xpath('option[.= "' + text + '"]')).click();
+            await (await this.getElement()).findElement(by.xpath('option[.= "' + text + '"]')).click();
             log.debug("Selected " + text + " from " + this.byEL);
         }
         catch(ex){
